@@ -1,0 +1,171 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Menu */
+.menu {
+  background-color: #1f4e5f;
+  color: white;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  margin: 0;
+}
+
+.boton-menu {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.boton-menu.activo {
+  border-bottom: 3px solid #f2b134;
+}
+
+/* Contenido */
+.contenido {
+  flex: 1;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.bienvenida {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.tarjetas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.tarjeta {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  border-left: 6px solid #f2b134;
+}
+
+.tarjeta h3 {
+  margin-top: 5px;
+}
+
+.etiqueta {
+  font-size: 12px;
+  background-color: #e3eef2;
+  color: #1f4e5f;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.autor {
+  color: #777;
+  font-size: 14px;
+}
+
+.boton {
+  display: inline-block;
+  background-color: #1f4e5f;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 15px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.categorias {
+  margin-bottom: 20px;
+}
+
+.boton-categoria {
+  background-color: white;
+  border: 1px solid #1f4e5f;
+  border-radius: 20px;
+  padding: 6px 14px;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.boton-categoria.activo {
+  background-color: #1f4e5f;
+  color: white;
+}
+
+/* Lector */
+.lector {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.boton-regresar {
+  background: none;
+  border: none;
+  color: #1f4e5f;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pie {
+  background-color: #1f4e5f;
+  color: white;
+  text-align: center;
+  font-size: 14px;
+}
+
+/* RF-04 Responsive: tableta */
+@media (max-width: 900px) {
+  .tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* RF-04 Responsive: celular */
+@media (max-width: 600px) {
+  .menu {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .boton-menu {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+  }
+
+  .tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .bienvenida,
+  .lector {
+    padding: 20px;
+  }
+
+  .lector {
+    font-size: 16px;
+  }
+}
