@@ -2,7 +2,7 @@
 
 Proyecto de la materia Proyecto II 
 
-## Sprint 1 (12/10/2026 al 23/10/2026)
+## Sprint 1 (14/09/2026 al 25/09/2026)
 
 - RF-01 Página de inicio
 - RF-02 Biblioteca de artículos y cuentos
