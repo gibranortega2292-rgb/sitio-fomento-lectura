@@ -121,6 +121,37 @@
   line-height: 1.6;
 }
 
+/* RF-06 Buscador */
+.buscador {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #1f4e5f;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* RF-07 y RF-08 controles del lector */
+.controles {
+  margin: 15px 0;
+}
+
+.boton-control {
+  background-color: #e3eef2;
+  color: #1f4e5f;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  margin: 0 8px 8px 0;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.letra-serif {
+  font-family: Georgia, 'Times New Roman', serif;
+}
+
 .boton-regresar {
   background: none;
   border: none;
@@ -164,8 +195,19 @@
   .lector {
     padding: 20px;
   }
+}
+
+/* RF-09 al descargar en PDF solo sale la lectura */
+@media print {
+  .menu,
+  .pie,
+  .controles,
+  .boton-regresar,
+  .lector .boton {
+    display: none;
+  }
 
   .lector {
-    font-size: 16px;
+    padding: 0;
   }
 }

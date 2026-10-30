@@ -30,6 +30,13 @@ function Inicio(props) {
             Ver libros
           </button>
         </div>
+        <div className="tarjeta">
+          <h3>Videos y juegos</h3>
+          <p>Videos educativos y juegos para aprender mientras te diviertes.</p>
+          <button className="boton" onClick={() => props.cambiarSeccion("multimedia")}>
+            Ver videos y juegos
+          </button>
+        </div>
       </div>
     </section>
   );

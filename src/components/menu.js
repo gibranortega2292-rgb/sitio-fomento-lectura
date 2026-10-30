@@ -5,6 +5,7 @@ function Menu(props) {
     { id: "inicio", texto: "Inicio" },
     { id: "biblioteca", texto: "Biblioteca" },
     { id: "libros", texto: "Libros de dominio público" },
+    { id: "multimedia", texto: "Videos y juegos" },
   ];
 
   return (
