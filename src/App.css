@@ -4,12 +4,12 @@
   flex-direction: column;
 }
 
-/* Menu */
 .menu {
   background-color: #1f4e5f;
   color: white;
   padding: 10px 40px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
@@ -110,7 +110,6 @@
   color: white;
 }
 
-/* Lector */
 .lector {
   background-color: white;
   border-radius: 10px;
@@ -121,7 +120,6 @@
   line-height: 1.6;
 }
 
-/* RF-06 Buscador */
 .buscador {
   width: 100%;
   box-sizing: border-box;
@@ -132,7 +130,6 @@
   margin-bottom: 15px;
 }
 
-/* RF-07 y RF-08 controles del lector */
 .controles {
   margin: 15px 0;
 }
@@ -168,14 +165,31 @@
   font-size: 14px;
 }
 
-/* RF-04 Responsive: tableta */
+.formulario {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.aviso {
+  color: #a5481c;
+}
+
+.comentario {
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  margin-bottom: 10px;
+}
+
 @media (max-width: 900px) {
   .tarjetas {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* RF-04 Responsive: celular */
 @media (max-width: 600px) {
   .menu {
     flex-direction: column;
@@ -197,7 +211,6 @@
   }
 }
 
-/* RF-09 al descargar en PDF solo sale la lectura */
 @media print {
   .menu,
   .pie,

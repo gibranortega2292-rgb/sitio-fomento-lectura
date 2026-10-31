@@ -6,6 +6,12 @@ function Menu(props) {
     { id: "biblioteca", texto: "Biblioteca" },
     { id: "libros", texto: "Libros de dominio público" },
     { id: "multimedia", texto: "Videos y juegos" },
+    { id: "podcasts", texto: "Podcasts" },
+    { id: "bibliotecas", texto: "Bibliotecas" },
+    { id: "agenda", texto: "Agenda" },
+    { id: "foro", texto: "Foro" },
+    // RF-03 si hay sesion se muestra el nombre del usuario
+    { id: "cuenta", texto: props.usuario ? "👤 " + props.usuario.nombre : "Iniciar sesión" },
   ];
 
   return (

@@ -1,6 +1,6 @@
 # Sitio web de fomento a la lectura
 
-Proyecto de la materia Proyecto II 
+Proyecto de la materia Proyecto II (Scrum). Aquí se guardan los avances del desarrollo en React.
 
 ## Sprint 1 (14/09/2026 al 25/09/2026)
 
@@ -16,6 +16,14 @@ Proyecto de la materia Proyecto II
 - RF-08 Tamaño y tipo de letra en el lector
 - RF-09 Descargar lecturas en PDF
 - RF-10 Videos y juegos educativos
+
+## Sprint 3 (12/10/2026 al 23/10/2026)
+
+- RF-03 Registro e inicio de sesión (se guarda en el navegador)
+- RF-11 Podcasts y música
+- RF-12 Directorio de bibliotecas públicas con filtro por estado
+- RF-13 Agenda de actividades
+- RF-14 Foro de comentarios
 
 ## Cómo correrlo
 

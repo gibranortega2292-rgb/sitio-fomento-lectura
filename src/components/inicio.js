@@ -37,6 +37,20 @@ function Inicio(props) {
             Ver videos y juegos
           </button>
         </div>
+        <div className="tarjeta">
+          <h3>Bibliotecas y agenda</h3>
+          <p>Encuentra una biblioteca pública y actividades de lectura.</p>
+          <button className="boton" onClick={() => props.cambiarSeccion("agenda")}>
+            Ver agenda
+          </button>
+        </div>
+        <div className="tarjeta">
+          <h3>Foro</h3>
+          <p>Crea tu cuenta y comparte qué estás leyendo.</p>
+          <button className="boton" onClick={() => props.cambiarSeccion("foro")}>
+            Ir al foro
+          </button>
+        </div>
       </div>
     </section>
   );
