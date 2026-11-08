@@ -25,6 +25,15 @@ Proyecto de la materia Proyecto II (Scrum). Aquí se guardan los avances del des
 - RF-13 Agenda de actividades
 - RF-14 Foro de comentarios
 
+## Unidad 4: ajustes finales (03/11/2026 al 06/11/2026)
+
+Cambios que salieron de la reunión de revisión inicial:
+
+- RF-15 Menú para celular con botón ☰
+- RF-16 Modo oscuro (se recuerda en el navegador)
+- RF-17 Mis favoritos con la estrella ☆ en cada lectura
+- RF-18 El lector recuerda el tamaño y el tipo de letra
+
 ## Cómo correrlo
 
 ```
