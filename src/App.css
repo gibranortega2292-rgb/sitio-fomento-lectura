@@ -4,6 +4,7 @@
   flex-direction: column;
 }
 
+/* Menu */
 .menu {
   background-color: #1f4e5f;
   color: white;
@@ -24,8 +25,8 @@
   border: none;
   color: white;
   font-size: 16px;
-  margin-left: 15px;
-  padding: 8px;
+  margin-left: 10px;
+  padding: 8px 4px;
   cursor: pointer;
 }
 
@@ -110,6 +111,7 @@
   color: white;
 }
 
+/* Lector */
 .lector {
   background-color: white;
   border-radius: 10px;
@@ -120,6 +122,7 @@
   line-height: 1.6;
 }
 
+/* RF-06 Buscador */
 .buscador {
   width: 100%;
   box-sizing: border-box;
@@ -130,6 +133,7 @@
   margin-bottom: 15px;
 }
 
+/* RF-07 y RF-08 controles del lector */
 .controles {
   margin: 15px 0;
 }
@@ -165,6 +169,7 @@
   font-size: 14px;
 }
 
+/* RF-03 y RF-14 formularios y comentarios */
 .formulario {
   background-color: white;
   border-radius: 10px;
@@ -184,21 +189,110 @@
   margin-bottom: 10px;
 }
 
+/* RF-17 estrella de favoritos */
+.tarjeta {
+  position: relative;
+}
+
+.boton-favorito {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #f2b134;
+  cursor: pointer;
+}
+
+/* RF-15 boton del menu en celular (en computadora no se ve) */
+.boton-hamburguesa {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* RF-16 modo oscuro */
+.solo-celular {
+  display: none;
+}
+
+
+.app.oscuro {
+  background-color: #1b1f24;
+  color: #e6e6e6;
+}
+
+.oscuro .tarjeta,
+.oscuro .bienvenida,
+.oscuro .lector,
+.oscuro .formulario,
+.oscuro .comentario {
+  background-color: #2a3038;
+  color: #e6e6e6;
+}
+
+.oscuro .autor {
+  color: #aaa;
+}
+
+.oscuro .boton-regresar,
+.oscuro .boton-categoria {
+  color: #e6e6e6;
+}
+
+.oscuro .boton-categoria {
+  background-color: #2a3038;
+}
+
+.oscuro .buscador {
+  background-color: #2a3038;
+  color: #e6e6e6;
+}
+
+/* RF-04 Responsive: tableta */
 @media (max-width: 900px) {
   .tarjetas {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
+/* RF-04 Responsive: celular */
 @media (max-width: 600px) {
   .menu {
+    padding: 10px 15px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  /* RF-15 el menu se esconde y se abre con el boton ☰ */
+  .boton-hamburguesa {
+    display: block;
+  }
+
+  .solo-celular {
+    display: inline;
+  }
+
+  .menu nav {
+    display: none;
+    width: 100%;
+  }
+
+  .menu nav.abierto {
+    display: flex;
     flex-direction: column;
-    padding: 10px;
   }
 
   .boton-menu {
-    margin: 5px 0 0 0;
-    font-size: 14px;
+    margin: 0;
+    font-size: 15px;
+    text-align: left;
   }
 
   .tarjetas {
@@ -211,6 +305,7 @@
   }
 }
 
+/* RF-09 al descargar en PDF solo sale la lectura */
 @media print {
   .menu,
   .pie,

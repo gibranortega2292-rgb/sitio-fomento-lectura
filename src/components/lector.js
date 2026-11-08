@@ -3,10 +3,17 @@ import React, { useEffect, useState } from "react";
 function Lector(props) {
   const lectura = props.lectura;
   // RF-08 tamaño y tipo de letra
-  const [tamano, setTamano] = useState(18);
-  const [tipoLetra, setTipoLetra] = useState("sans");
+  // RF-18 se usa lo ultimo que eligio el usuario (guardado en el navegador)
+  const [tamano, setTamano] = useState(Number(localStorage.getItem("tamanoLetra")) || 18);
+  const [tipoLetra, setTipoLetra] = useState(localStorage.getItem("tipoLetra") || "sans");
   // RF-07 (en curso) lectura en voz alta con la voz del navegador
   const [leyendo, setLeyendo] = useState(false);
+
+  // RF-18 guardar la letra cada vez que cambia
+  useEffect(() => {
+    localStorage.setItem("tamanoLetra", tamano);
+    localStorage.setItem("tipoLetra", tipoLetra);
+  }, [tamano, tipoLetra]);
 
   // si el usuario sale del lector se detiene la voz
   useEffect(() => {

@@ -17,7 +17,13 @@ function Libros(props) {
       {lista.length === 0 && <p>No se encontraron libros.</p>}
       <div className="tarjetas">
         {lista.map((libro) => (
-          <TarjetaLectura key={libro.id} lectura={libro} abrirLectura={props.abrirLectura} />
+          <TarjetaLectura
+            key={libro.id}
+            lectura={libro}
+            abrirLectura={props.abrirLectura}
+            favoritos={props.favoritos}
+            alternarFavorito={props.alternarFavorito}
+          />
         ))}
       </div>
     </section>

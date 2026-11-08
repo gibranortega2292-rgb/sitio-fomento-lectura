@@ -11,14 +11,40 @@ import Bibliotecas from "./components/bibliotecas";
 import Agenda from "./components/agenda";
 import Foro from "./components/foro";
 import Cuenta from "./components/cuenta";
+import Favoritos from "./components/favoritos";
 import PiePagina from "./components/pie-pagina";
 
 function App() {
+  // seccion que se muestra en la pagina
   const [seccion, setSeccion] = useState("inicio");
+  // lectura que el usuario abrio para leer
   const [lectura, setLectura] = useState(null);
+  // RF-03 usuario con sesion iniciada (se guarda en el navegador)
   const [usuario, setUsuario] = useState(
     JSON.parse(localStorage.getItem("sesion") || "null")
   );
+
+  // RF-16 modo oscuro (se recuerda en el navegador)
+  const [oscuro, setOscuro] = useState(localStorage.getItem("modo") === "oscuro");
+  // RF-17 ids de las lecturas favoritas
+  const [favoritos, setFavoritos] = useState(
+    JSON.parse(localStorage.getItem("favoritos") || "[]")
+  );
+
+  const cambiarModo = () => {
+    localStorage.setItem("modo", oscuro ? "claro" : "oscuro");
+    setOscuro(!oscuro);
+  };
+
+  const alternarFavorito = (id) => {
+    const nuevos = favoritos.includes(id)
+      ? favoritos.filter((f) => f !== id)
+      : [...favoritos, id];
+    localStorage.setItem("favoritos", JSON.stringify(nuevos));
+    setFavoritos(nuevos);
+  };
+
+  const propsFavoritos = { favoritos, alternarFavorito };
 
   const cambiarSeccion = (nueva) => {
     setLectura(null);
@@ -39,9 +65,11 @@ function App() {
   if (lectura) {
     contenido = <Lector lectura={lectura} regresar={() => setLectura(null)} />;
   } else if (seccion === "biblioteca") {
-    contenido = <Biblioteca abrirLectura={setLectura} />;
+    contenido = <Biblioteca abrirLectura={setLectura} {...propsFavoritos} />;
   } else if (seccion === "libros") {
-    contenido = <Libros abrirLectura={setLectura} />;
+    contenido = <Libros abrirLectura={setLectura} {...propsFavoritos} />;
+  } else if (seccion === "favoritos") {
+    contenido = <Favoritos abrirLectura={setLectura} {...propsFavoritos} />;
   } else if (seccion === "multimedia") {
     contenido = <Multimedia />;
   } else if (seccion === "podcasts") {
@@ -59,8 +87,14 @@ function App() {
   }
 
   return (
-    <div className="app">
-      <Menu seccion={seccion} cambiarSeccion={cambiarSeccion} usuario={usuario} />
+    <div className={oscuro ? "app oscuro" : "app"}>
+      <Menu
+        seccion={seccion}
+        cambiarSeccion={cambiarSeccion}
+        usuario={usuario}
+        oscuro={oscuro}
+        cambiarModo={cambiarModo}
+      />
       <main className="contenido">{contenido}</main>
       <PiePagina />
     </div>

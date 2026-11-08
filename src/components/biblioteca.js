@@ -32,7 +32,13 @@ function Biblioteca(props) {
       {lista.length === 0 && <p>No se encontraron lecturas.</p>}
       <div className="tarjetas">
         {lista.map((lectura) => (
-          <TarjetaLectura key={lectura.id} lectura={lectura} abrirLectura={props.abrirLectura} />
+          <TarjetaLectura
+            key={lectura.id}
+            lectura={lectura}
+            abrirLectura={props.abrirLectura}
+            favoritos={props.favoritos}
+            alternarFavorito={props.alternarFavorito}
+          />
         ))}
       </div>
     </section>
